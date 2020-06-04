@@ -1,3 +1,4 @@
+<p class="notice"><%= flash[:notice] %></p>
 <h1>Books</h1>
 <table>
   <tr>
@@ -18,28 +19,22 @@
 <h2>New book</h2>
 <%= form_for(@book) do |f| %>
   <% if @book.errors.any? %>
-    <ul>
-      <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-    <div>
-      <label for="book_title">Title</label><br>
-      <%= f.text_field :title %>
-    </div>
-    <div>
-      <label for="book_body">Body</label><br>
-      <%= f.text_area :body %>
-    </div>
-  <% else %>
-    <div>
-      <label for="book_title">Title</label><br>
-      <%= f.text_field :title %>
-    </div>
-    <div>
-      <label for="book_body">Body</label><br>
-      <%= f.text_area :body %>
+    <div class="err_box">
+      <p class="err_head"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+      <ul class="err_list">
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-    <%= f.submit 'Create Book' %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit 'Create Book' %>
 <% end %>

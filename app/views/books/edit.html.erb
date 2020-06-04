@@ -1,11 +1,21 @@
 <h1>Editing Book</h1>
 <%= form_for(@book) do |f| %>
-  <div>
-    <label for="book_title">Title</label><br>
+  <% if @book.errors.any? %>
+    <div class="err_box">
+      <p class="err_head"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+      <ul class="err_list">
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div>
-    <label for="book_body">Body</label><br>
+  <div class="field">
+    <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
   <%= f.submit 'Update Book' %>
