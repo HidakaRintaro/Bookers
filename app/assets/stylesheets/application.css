@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 30px;
+}
+a {
+  color: black;
+}
+a:visited {
+  color: gray;
+}
+.top_content {
+  margin: 0 30px;
+}
+th, td {
+  padding: 0 5px 10px;
+}
+.succes {
+  color: green;
+  margin-left: 30px;
+}
+.show_content {
+  margin: 20px 30px;
+}
