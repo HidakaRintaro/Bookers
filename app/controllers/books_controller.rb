@@ -22,7 +22,6 @@ class BooksController < ApplicationController
       @books = Book.all # 一覧表示用に全てのデータを取得
       render action: :index
     end
-    
   end
 
   def edit
