@@ -23,6 +23,39 @@ a {
 a:visited {
   color: gray;
 }
+a:hover {
+  background-color: black;
+  color: white;
+}
+li {
+  list-style-type: square	;
+}
+.err_box {
+  width: 450px;
+  border: 2px solid red;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+}
+.err_head {
+  color: white;
+  background-color: rgb(218, 2, 2);
+  margin: 0;
+  padding: 5px 10px;
+}
+.err_list {
+  margin: 35px;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+label {
+  display: block;
+}
+.field {
+  margin-bottom: 10px;
+}
 .top_content {
   margin: 0 30px;
 }
